@@ -6,6 +6,7 @@ require 'pry'
 def create_project_hash
   goodreads_fiction = Nokogiri::HTML(open("https://www.goodreads.com/genres/fiction/"))
   book_block = goodreads_fiction.css(".bigBoxBody a img").attribute("alt").text
+  book_block2 = goodreads_fiction.css("div.prototip.prototipAllowOverflow")
   binding.pry
   projects = {}
   # ("div h2 a.readable.bookTitle")
